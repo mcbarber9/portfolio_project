@@ -44,4 +44,29 @@
 // a social cause or movement by participating in awareness campaigns
 // a family member or friend who is pursuing a personal goal or dream
 
-console.log('You can do this!');
+const generateQuest = () => {
+    const objectives = ['Help', 'Explore', 'Learn', 'Create', 'Support'];
+    const helpTargets = ['a neighbor with their yard work', 'an elderly person with grocery shopping', 'a student with their homework', 'a charity organization with fundraising efforts', 'a local animal shelter with pet adoption events'];
+    const exploreTargets = ['a new hiking trail in the area', 'a museum or art gallery in your city', 'a cultural festival or fair happening nearby', 'a local market or farmer\'s market', 'a historical landmark or site in your region'];
+    const learnTargets = ['a new language through online resources or classes', 'a musical instrument with the help of tutorials or a teacher', 'a coding language by enrolling in an online course', 'a new cooking technique from a recipe book or cooking show', 'a DIY project through online tutorials or workshops'];
+    const createTargets = ['a piece of artwork using different mediums (painting, sculpting, etc.)', 'a blog or personal website to share your experiences or interests', 'a handmade gift for a friend or family member', 'a home-cooked meal from scratch using fresh ingredients', 'a playlist of your favorite songs or a personalized mixtape'];
+    const supportTargets = ['a local charity or nonprofit organization through volunteering or donations', 'a friend in need by lending a listening ear or offering advice', 'a small business in your community by promoting their products or services', 'a social cause or movement by participating in awareness campaigns', 'a family member or friend who is pursuing a personal goal or dream'];
+    
+    const objective = objectives[Math.floor(Math.random() * objectives.length)];
+    if (objective === 'Help') {
+        target = helpTargets[Math.floor(Math.random() * helpTargets.length)];
+    } else if (objective === 'Explore') {
+        target = exploreTargets[Math.floor(Math.random() * exploreTargets.length)];
+    } else if (objective === 'Learn') {
+        target = learnTargets[Math.floor(Math.random() * learnTargets.length)];
+    } else if (objective === 'Create') {
+        target = createTargets[Math.floor(Math.random() * createTargets.length)];
+    } else {
+        target = supportTargets[Math.floor(Math.random() * supportTargets.length)];
+    }
+    quest = `${objective} ${target}`;
+    return quest;
+}
+
+random_quest = generateQuest();
+console.log(random_quest);
